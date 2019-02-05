@@ -356,7 +356,7 @@ func TestRun(t *testing.T) {
 }
 ```
 
-**Do:**
+**Do: _in v2 and older code_**
 ```go
 func TestRun(t *testing.T) {
 	ln, err := net.Listen("tcp", "127.0.0.1:0")
@@ -376,8 +376,10 @@ func TestRun(t *testing.T) {
 }
 ```
 
-Only use mocks if not otherwise possible, favor real implementations.
-– [Mitchell Hashimoto at GopherCon 2017](https://youtu.be/8hQG7QlcLBk?t=26m51s)
+_In the new repositories where we use the Repository pattern and/or the [Ports & Adapters/Hexagonal Pattern](https://softwarecampament.wordpress.com/portsadapters/) we can use mocks to run true unit tests_
+
+~~Only use mocks if not otherwise possible, favor real implementations.
+– [Mitchell Hashimoto at GopherCon 2017](https://youtu.be/8hQG7QlcLBk?t=26m51s)~~
 
 ### Avoid DeepEqual
 
